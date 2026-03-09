@@ -8,6 +8,7 @@
   background: #0a0a0a;
   border-bottom: 1px solid rgba(212, 175, 55, 0.15);
   transition: background 0.4s ease, backdrop-filter 0.4s ease, box-shadow 0.4s ease;
+  overflow: visible; /* allow logo to overlap outside header bar */
 }
 
 /* When scrolled: beautiful transparent black glass */
@@ -39,10 +40,10 @@
 }
 
 .header-logo {
-  height: 123px;
+  height: 111px; /* 10% smaller than 123px */
   width: auto;
   position: relative;
-  top: 12px; /* nudge slightly downward */
+  top: 4px; /* small downward nudge, not too much */
   filter: drop-shadow(0 4px 20px rgba(0, 0, 0, 0.8));
   transition: opacity 0.3s ease, height 0.3s ease;
 }
@@ -53,7 +54,7 @@
 
 /* Slightly smaller logo when scrolled */
 .site-header.scrolled .header-logo {
-  height: 115px;
+  height: 95px;
 }
 
 /* ── DESKTOP NAV ─────────────────────────────────────── */
