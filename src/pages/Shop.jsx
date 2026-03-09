@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { ShoppingCart } from 'lucide-react';
-import ScrollReveal from '../utils/ScrollReveal';
+import ScrollReveal from '../components/utils/ScrollReveal';
 import './Shop.css';
 
 const products = [
