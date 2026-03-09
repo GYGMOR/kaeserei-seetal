@@ -9,17 +9,17 @@ import TeamPage from './pages/TeamPage';
 import PartnersPage from './pages/PartnersPage';
 import GalleryPage from './pages/GalleryPage';
 import ContactPage from './pages/ContactPage';
+import NewsPage from './pages/NewsPage';
+import NewsArticlePage from './pages/NewsArticlePage';
 import Header from './components/layout/Header';
 import Footer from './components/layout/Footer';
 import './index.css';
 
 const ScrollToTop = () => {
   const { pathname } = useLocation();
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [pathname]);
+  useEffect(() => { window.scrollTo(0, 0); }, [pathname]);
   return null;
-}
+};
 
 function App() {
   return (
@@ -37,6 +37,8 @@ function App() {
             <Route path="/gallery" element={<GalleryPage />} />
             <Route path="/shop" element={<Shop />} />
             <Route path="/contact" element={<ContactPage />} />
+            <Route path="/news" element={<NewsPage />} />
+            <Route path="/news/:id" element={<NewsArticlePage />} />
             <Route path="/impressum" element={<Impressum />} />
           </Routes>
         </main>
