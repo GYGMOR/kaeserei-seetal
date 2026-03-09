@@ -1,11 +1,11 @@
 :root {
-  /* iOS Light-Dark Theme Colors */
-  --bg-dark: #111827; /* Dark slate instead of black */
-  --surface-color: #1f2937;
-  --glass-bg: rgba(31, 41, 55, 0.75); /* Softer gray glass */
-  --glass-border: rgba(255, 255, 255, 0.1);
-  --text-main: #f5f5f7;
-  --text-muted: #86868b;
+  /* Premium Light/Grey Theme Colors */
+  --bg-dark: #f8f9fa; /* Light, elegant grey-white */
+  --surface-color: #ffffff;
+  --glass-bg: rgba(255, 255, 255, 0.75); /* Light glass */
+  --glass-border: rgba(0, 0, 0, 0.08); /* Subtle dark border for light glass */
+  --text-main: #111827; /* Dark slate text */
+  --text-muted: #6b7280; /* Medium grey text */
   --accent-gold: #d4af37; /* Premium gold accent */
   
   /* Layout & Spaces */
@@ -58,7 +58,7 @@ a:hover {
   -webkit-backdrop-filter: blur(20px);
   border: 1px solid var(--glass-border);
   border-radius: var(--border-radius-lg);
-  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.05);
 }
 
 /* Header Styles */
@@ -72,7 +72,7 @@ a:hover {
   align-items: center;
   justify-content: space-between;
   padding: 0 5%;
-  background: rgba(17, 24, 39, 0.6);
+  background: rgba(255, 255, 255, 0.85);
   backdrop-filter: blur(25px);
   -webkit-backdrop-filter: blur(25px);
   border-bottom: 1px solid var(--glass-border);
@@ -110,7 +110,7 @@ main {
   justify-content: center;
   text-align: center;
   padding: 2rem;
-  background: radial-gradient(circle at center, rgba(212, 175, 55, 0.08) 0%, var(--bg-dark) 70%);
+  background: radial-gradient(circle at center, rgba(212, 175, 55, 0.05) 0%, var(--bg-dark) 70%);
 }
 
 .hero h1 {

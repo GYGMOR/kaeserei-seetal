@@ -15,7 +15,7 @@
 
 .glass-header.scrolled {
   height: 70px;
-  background: rgba(10, 10, 10, 0.8);
+  background: rgba(255, 255, 255, 0.85);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
   border-bottom: 1px solid rgba(212, 175, 55, 0.2);
 }
@@ -29,15 +29,26 @@
   justify-content: space-between;
 }
 
-.logo {
-  height: 60px;
-  width: auto;
-  transition: height 0.3s ease;
-  filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.3));
+.logo-link {
+  position: relative;
+  display: flex;
+  align-items: center;
+  z-index: 100;
 }
 
-.glass-header.scrolled .logo {
-  height: 45px;
+.logo {
+  height: 140px; /* Much larger logo */
+  width: auto;
+  position: absolute; /* Overlap the header */
+  top: -40px; /* Pull it up a bit if needed, or push it down */
+  transform-origin: left center;
+  transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+  filter: drop-shadow(0 4px 12px rgba(0,0,0,0.1)); /* Soft shadow for light theme */
+}
+
+/* Shrink logo when scrolling */
+.scrolled .logo {
+  transform: scale(0.6);
 }
 
 .desktop-nav {
