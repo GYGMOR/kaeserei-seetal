@@ -1,7 +1,7 @@
 .glass-header {
   position: fixed;
   top: 0; left: 0; right: 0;
-  height: 130px; /* Entire Header is much bigger */
+  height: 70px; /* Header remains small/sleek */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -15,7 +15,7 @@
 }
 
 .glass-header.scrolled {
-  height: 130px; /* Do not shrink header height */
+  height: 70px; /* Do not shrink header height */
   background: rgba(0, 0, 0, 0.98); /* Very dark glass when scrolled */
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
   border-bottom: 1px solid rgba(212, 175, 55, 0.2);
@@ -34,14 +34,18 @@
   position: relative;
   display: flex;
   align-items: center;
+  width: 140px; /* Reserve space for the nav so it doesn't overlap */
+  height: 70px;
   z-index: 100;
 }
 
 .logo {
-  height: 200px; /* Massive overlapping logo */
-  width: auto;
   position: absolute; 
-  top: -35px; /* Overlops top and bottom of the 130px header */
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%); /* perfectly centered vertically but breaks out! */
+  height: 180px; /* Massive overlapping logo */
+  width: auto;
   transform-origin: left center;
   transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
   filter: drop-shadow(0 8px 16px rgba(0,0,0,0.6)); /* Strong shadow */
