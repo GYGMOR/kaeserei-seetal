@@ -117,20 +117,21 @@
 .contact-form textarea {
   width: 100%;
   padding: 1rem 1.5rem;
-  background: rgba(0, 0, 0, 0.3);
-  border: 1px solid var(--glass-border);
+  background: #ffffff;
+  border: 1.5px solid rgba(212, 175, 55, 0.5);
   border-radius: var(--border-radius-sm);
   color: var(--text-main);
   font-family: inherit;
   font-size: 1rem;
   transition: all 0.3s;
+  outline: none;
 }
 
 .contact-form input:focus,
 .contact-form textarea:focus {
-  outline: none;
-  border-color: var(--accent-gold);
-  background: rgba(0, 0, 0, 0.5);
+  border-color: #d4af37;
+  box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.15);
+  background: #fffef8;
 }
 
 .contact-form textarea {

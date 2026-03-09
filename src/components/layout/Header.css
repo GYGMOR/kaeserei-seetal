@@ -39,7 +39,7 @@
 }
 
 .header-logo {
-  height: 160px;
+  height: 140px;
   width: auto;
   position: relative;
   top: 0;
@@ -53,7 +53,7 @@
 
 /* Slightly smaller logo when scrolled */
 .site-header.scrolled .header-logo {
-  height: 130px;
+  height: 115px;
 }
 
 /* ── DESKTOP NAV ─────────────────────────────────────── */

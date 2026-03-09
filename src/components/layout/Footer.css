@@ -20,11 +20,10 @@
 
 /* ── BRAND ──────────────────────────────────────── */
 .footer-logo {
-  height: 70px;
+  height: 90px;
   width: auto;
   margin-bottom: 1.2rem;
-  filter: brightness(0) invert(1);
-  opacity: 0.9;
+  opacity: 0.95;
 }
 
 .footer-tagline {
