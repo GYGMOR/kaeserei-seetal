@@ -1,46 +1,48 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
+import { HashRouter, Routes, Route, useLocation } from 'react-router-dom';
 import Home from './pages/Home';
 import Shop from './pages/Shop';
 import Impressum from './pages/Impressum';
+import AboutPage from './pages/AboutPage';
+import ServicesPage from './pages/ServicesPage';
+import TeamPage from './pages/TeamPage';
+import PartnersPage from './pages/PartnersPage';
+import GalleryPage from './pages/GalleryPage';
+import ContactPage from './pages/ContactPage';
 import Header from './components/layout/Header';
 import Footer from './components/layout/Footer';
 import './index.css';
 
-function App() {
-  const [currentPath, setCurrentPath] = useState(window.location.hash);
-
+const ScrollToTop = () => {
+  const { pathname } = useLocation();
   useEffect(() => {
-    const handleHashChange = () => {
-      // Small timeout allows smooth scroll logic for ID anchors on the home page if it stays on home
-      setTimeout(() => setCurrentPath(window.location.hash), 50);
-    };
-    window.addEventListener('hashchange', handleHashChange);
-    return () => window.removeEventListener('hashchange', handleHashChange);
-  }, []);
+    window.scrollTo(0, 0);
+  }, [pathname]);
+  return null;
+}
 
-  const renderPage = () => {
-    if (currentPath === '#shop') {
-      return (
-        <>
-          <Header />
-          <Shop />
-          <Footer />
-        </>
-      );
-    }
-    if (currentPath === '#impressum') {
-      return <Impressum />;
-    }
-    
-    // For local anchors, keep the Home page visible
-    // They are handled by native smooth scrolling
-    return <Home />;
-  };
-
+function App() {
   return (
-    <div className="app-container">
-      {renderPage()}
-    </div>
+    <HashRouter>
+      <ScrollToTop />
+      <div className="app-container">
+        <Header />
+        <main style={{ minHeight: 'calc(100vh - 80px)' }}>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<AboutPage />} />
+            <Route path="/services" element={<ServicesPage />} />
+            <Route path="/team" element={<TeamPage />} />
+            <Route path="/partners" element={<PartnersPage />} />
+            <Route path="/gallery" element={<GalleryPage />} />
+            <Route path="/shop" element={<Shop />} />
+            <Route path="/contact" element={<ContactPage />} />
+            <Route path="/impressum" element={<Impressum />} />
+          </Routes>
+        </main>
+        <Footer />
+      </div>
+    </HashRouter>
   );
 }
 

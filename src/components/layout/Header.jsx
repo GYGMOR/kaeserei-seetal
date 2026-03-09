@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import './Header.css';
 
 const Header = () => {
   const [scrolled, setScrolled] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -15,17 +17,17 @@ const Header = () => {
   return (
     <header className={`glass-header ${scrolled ? 'scrolled' : ''}`}>
       <div className="header-content">
-        <a href="#home" className="logo-link">
-          <img src="/logo.png" alt="Käserei Seetal" className="logo" />
-        </a>
+        <Link to="/" className="logo-link">
+          <img src="logo.png" alt="Käserei Seetal" className="logo" />
+        </Link>
         <nav className="desktop-nav">
-          <a href="#about">Über uns</a>
-          <a href="#services">Dienstleistungen</a>
-          <a href="#team">Team</a>
-          <a href="#partners">Partner</a>
-          <a href="#gallery">Galerie</a>
-          <a href="#shop">Shop</a>
-          <a href="#contact">Kontakt</a>
+          <Link to="/about" className={location.pathname === '/about' ? 'active' : ''}>Über uns</Link>
+          <Link to="/services" className={location.pathname === '/services' ? 'active' : ''}>Dienstleistungen</Link>
+          <Link to="/team" className={location.pathname === '/team' ? 'active' : ''}>Team</Link>
+          <Link to="/partners" className={location.pathname === '/partners' ? 'active' : ''}>Partner</Link>
+          <Link to="/gallery" className={location.pathname === '/gallery' ? 'active' : ''}>Galerie</Link>
+          <Link to="/shop" className={location.pathname === '/shop' ? 'active' : ''}>Shop</Link>
+          <Link to="/contact" className={location.pathname === '/contact' ? 'active' : ''}>Kontakt</Link>
         </nav>
       </div>
     </header>

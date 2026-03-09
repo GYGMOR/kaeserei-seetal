@@ -1,4 +1,5 @@
 import React from 'react';
+import { MapPin, Phone, Mail } from 'lucide-react';
 import './Contact.css';
 
 const Contact = () => {
@@ -12,7 +13,7 @@ const Contact = () => {
           
           <div className="info-block">
             <div className="info-item">
-              <span className="info-icon">📍</span>
+              <span className="info-icon"><MapPin size={24} color="var(--accent-gold)" /></span>
               <div>
                 <h4>Adresse</h4>
                 <p>Käsereistrasse 1<br/>5732 Zetzwil<br/>Schweiz</p>
@@ -20,7 +21,7 @@ const Contact = () => {
             </div>
             
             <div className="info-item">
-              <span className="info-icon">📞</span>
+              <span className="info-icon"><Phone size={24} color="var(--accent-gold)" /></span>
               <div>
                 <h4>Telefon</h4>
                 <p>+41 62 123 45 67</p>
@@ -28,7 +29,7 @@ const Contact = () => {
             </div>
             
             <div className="info-item">
-              <span className="info-icon">✉️</span>
+              <span className="info-icon"><Mail size={24} color="var(--accent-gold)" /></span>
               <div>
                 <h4>E-Mail</h4>
                 <p>info@kaeserei-seetal.ch</p>

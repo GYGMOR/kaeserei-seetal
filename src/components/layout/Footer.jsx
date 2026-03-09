@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './Footer.css';
 
 const Footer = () => {
@@ -6,7 +7,9 @@ const Footer = () => {
     <footer className="glass-footer">
       <div className="footer-content">
         <div className="footer-col brand-col">
-          <img src="/logo.png" alt="Käserei Seetal" className="footer-logo" />
+          <Link to="/">
+            <img src="logo.png" alt="Käserei Seetal" className="footer-logo" />
+          </Link>
           <p>Tradition trifft auf Moderne im Herzen des Seetals.</p>
           <div className="socials">
             <a href="#" aria-label="Instagram">Instagram</a>

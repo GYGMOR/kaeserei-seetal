@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
+import { Wine, PartyPopper, Gift, Milk } from 'lucide-react';
 import './Services.css';
 
 const servicesList = [
-  { id: 1, title: 'Käsedegustationen', desc: 'Edle Tropfen und unser bester Käse in perfekter Harmonie.', icon: '🧀' },
-  { id: 2, title: 'Event-Catering', desc: 'Kulinarische Highlights für Ihren privaten oder geschäftlichen Anlass.', icon: '🥂' },
-  { id: 3, title: 'Geschenkkörbe', desc: 'Individuell zusammengestellte Präsente für jeden Geschmack.', icon: '🎁' },
-  { id: 4, title: 'Käseherstellung', desc: 'Erleben Sie hautnah, wie unsere regionalen Meisterwerke entstehen.', icon: '🥛' }
+  { id: 1, title: 'Käsedegustationen', desc: 'Edle Tropfen und unser bester Käse in perfekter Harmonie.', icon: <Wine size={48} color="var(--accent-gold)" /> },
+  { id: 2, title: 'Event-Catering', desc: 'Kulinarische Highlights für Ihren privaten oder geschäftlichen Anlass.', icon: <PartyPopper size={48} color="var(--accent-gold)" /> },
+  { id: 3, title: 'Geschenkkörbe', desc: 'Individuell zusammengestellte Präsente für jeden Geschmack.', icon: <Gift size={48} color="var(--accent-gold)" /> },
+  { id: 4, title: 'Käseherstellung', desc: 'Erleben Sie hautnah, wie unsere regionalen Meisterwerke entstehen.', icon: <Milk size={48} color="var(--accent-gold)" /> }
 ];
 
 const Services = () => {

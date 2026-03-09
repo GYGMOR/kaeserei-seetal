@@ -2,12 +2,12 @@ import React from 'react';
 import './Gallery.css';
 
 const galleryImages = [
-  { id: 1, type: 'large', src: '/hero_bg.png' },
-  { id: 2, type: 'small', src: '/about_1.png' },
-  { id: 3, type: 'vertical', src: '/about_2.png' },
-  { id: 4, type: 'small', src: '/hero_bg.png' },
-  { id: 5, type: 'large', src: '/about_1.png' },
-  { id: 6, type: 'small', src: '/about_2.png' },
+  { id: 1, type: 'large', src: 'hero_bg.png' },
+  { id: 2, type: 'small', src: 'about_1.png' },
+  { id: 3, type: 'vertical', src: 'about_2.png' },
+  { id: 4, type: 'small', src: 'hero_bg.png' },
+  { id: 5, type: 'large', src: 'about_1.png' },
+  { id: 6, type: 'small', src: 'about_2.png' },
 ];
 
 const Gallery = () => {

@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
+import { ShoppingCart } from 'lucide-react';
 import './Shop.css';
 
 const products = [
-  { id: 1, name: 'Seetaler Bergkäse', price: '24.50 CHF', desc: 'Würziger Hartkäse, 12 Monate gereift.', image: '/about_2.png' },
-  { id: 2, name: 'Cremiger Rahmkäse', price: '18.00 CHF', desc: 'Mild und zartschmelzend für die ganze Familie.', image: '/about_1.png' },
-  { id: 3, name: 'Trüffelzauber', price: '32.00 CHF', desc: 'Verfeinert mit echtem schwarzen Trüffel.', image: '/hero_bg.png' },
-  { id: 4, name: 'Fondue Hausmischung', price: '28.00 CHF', desc: 'Unsere geheime Rezeptur für den perfekten Abend.', image: '/about_2.png' }
+  { id: 1, name: 'Seetaler Bergkäse', price: '24.50 CHF', desc: 'Würziger Hartkäse, 12 Monate gereift.', image: 'about_2.png' },
+  { id: 2, name: 'Cremiger Rahmkäse', price: '18.00 CHF', desc: 'Mild und zartschmelzend für die ganze Familie.', image: 'about_1.png' },
+  { id: 3, name: 'Trüffelzauber', price: '32.00 CHF', desc: 'Verfeinert mit echtem schwarzen Trüffel.', image: 'hero_bg.png' },
+  { id: 4, name: 'Fondue Hausmischung', price: '28.00 CHF', desc: 'Unsere geheime Rezeptur für den perfekten Abend.', image: 'about_2.png' }
 ];
 
 const Shop = () => {
@@ -17,7 +18,7 @@ const Shop = () => {
   };
 
   return (
-    <div id="shop" className="shop-page">
+    <div className="page-wrapper animate-in shop-page">
       <div className="container">
         <div className="shop-header">
           <div className="shop-header-text">
@@ -26,7 +27,7 @@ const Shop = () => {
             <p>Bestellen Sie unsere Spezialitäten bequem zu sich nach Hause. (Aktuell in der Demo-Phase)</p>
           </div>
           <div className="cart-indicator glass-panel">
-            <span>🛒</span>
+            <ShoppingCart size={24} color="var(--accent-gold)" />
             <span className="cart-count">{cartCount}</span>
           </div>
         </div>

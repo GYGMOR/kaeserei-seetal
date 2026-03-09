@@ -1,29 +1,20 @@
 import React from 'react';
-import Header from '../components/layout/Header';
-import Footer from '../components/layout/Footer';
+import { Link } from 'react-router-dom';
 import Hero from '../components/sections/Hero';
 import About from '../components/sections/About';
-import Services from '../components/sections/Services';
-import Team from '../components/sections/Team';
 import Partners from '../components/sections/Partners';
-import Gallery from '../components/sections/Gallery';
-import Contact from '../components/sections/Contact';
 
 const Home = () => {
   return (
-    <>
-      <Header />
-      <main>
-        <Hero />
-        <About />
-        <Services />
-        <Team />
-        <Partners />
-        <Gallery />
-        <Contact />
-      </main>
-      <Footer />
-    </>
+    <div className="animate-in">
+      <Hero />
+      <About />
+      <div className="container" style={{ textAlign: 'center', marginBottom: '4rem' }}>
+        <Link to="/services" className="btn btn-primary glass-panel" style={{marginRight: '1rem'}}>Alle Dienstleistungen ansehen</Link>
+        <Link to="/team" className="btn btn-secondary glass-panel">Unser Team kennenlernen</Link>
+      </div>
+      <Partners />
+    </div>
   );
 };
 

@@ -1,9 +1,9 @@
 :root {
-  /* iOS Dark Theme Colors */
-  --bg-dark: #000000;
-  --surface-color: #1c1c1e;
-  --glass-bg: rgba(28, 28, 30, 0.65);
-  --glass-border: rgba(255, 255, 255, 0.15);
+  /* iOS Light-Dark Theme Colors */
+  --bg-dark: #111827; /* Dark slate instead of black */
+  --surface-color: #1f2937;
+  --glass-bg: rgba(31, 41, 55, 0.75); /* Softer gray glass */
+  --glass-border: rgba(255, 255, 255, 0.1);
   --text-main: #f5f5f7;
   --text-muted: #86868b;
   --accent-gold: #d4af37; /* Premium gold accent */
@@ -72,7 +72,7 @@ a:hover {
   align-items: center;
   justify-content: space-between;
   padding: 0 5%;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(17, 24, 39, 0.6);
   backdrop-filter: blur(25px);
   -webkit-backdrop-filter: blur(25px);
   border-bottom: 1px solid var(--glass-border);
@@ -110,7 +110,7 @@ main {
   justify-content: center;
   text-align: center;
   padding: 2rem;
-  background: radial-gradient(circle at center, rgba(212, 175, 55, 0.1) 0%, rgba(0,0,0,1) 70%);
+  background: radial-gradient(circle at center, rgba(212, 175, 55, 0.08) 0%, var(--bg-dark) 70%);
 }
 
 .hero h1 {

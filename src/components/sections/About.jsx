@@ -27,10 +27,10 @@ const About = () => {
 
         <div className="about-images">
           <div className="img-wrapper img-1">
-            <img src="/about_1.png" alt="Handwerk in der Käserei" />
+            <img src="about_1.png" alt="Handwerk in der Käserei" />
           </div>
           <div className="img-wrapper img-2">
-            <img src="/about_2.png" alt="Käsespezialitäten" />
+            <img src="about_2.png" alt="Käsespezialitäten" />
           </div>
         </div>
 
