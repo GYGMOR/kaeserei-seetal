@@ -1,0 +1,145 @@
+.services-section {
+  padding: 8rem 2rem;
+  background: radial-gradient(circle at top right, rgba(212, 175, 55, 0.05) 0%, rgba(10,10,10,1) 50%);
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.section-header h2 {
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--accent-gold);
+  margin-bottom: 0.5rem;
+}
+
+.section-header h3 {
+  font-size: 2.5rem;
+  color: var(--text-main);
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto 5rem;
+}
+
+.service-card {
+  padding: 2.5rem 1.5rem;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  border: 1px solid var(--glass-border);
+}
+
+.service-card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(212, 175, 55, 0.4);
+  background: rgba(40, 40, 42, 0.8);
+}
+
+.service-card.selected {
+  border-color: var(--accent-gold);
+  box-shadow: 0 0 20px rgba(212, 175, 55, 0.2);
+  background: rgba(212, 175, 55, 0.08);
+}
+
+.service-icon {
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+  filter: drop-shadow(0 4px 6px rgba(0,0,0,0.3));
+}
+
+.service-card h4 {
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+  color: var(--text-main);
+}
+
+.service-card p {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+/* Inquiry Panel */
+.inquiry-panel {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 3rem;
+  text-align: center;
+  border-top: 2px solid var(--accent-gold);
+}
+
+.inquiry-panel h3 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  color: var(--text-main);
+}
+
+.inquiry-panel p {
+  color: var(--text-muted);
+  margin-bottom: 2rem;
+}
+
+.inquiry-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  text-align: left;
+}
+
+.form-group-row {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.form-group-row input {
+  flex: 1;
+}
+
+.inquiry-form input,
+.inquiry-form textarea {
+  width: 100%;
+  padding: 1rem 1.5rem;
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--border-radius-sm);
+  color: var(--text-main);
+  font-family: inherit;
+  font-size: 1rem;
+  transition: all 0.3s;
+}
+
+.inquiry-form input:focus,
+.inquiry-form textarea:focus {
+  outline: none;
+  border-color: var(--accent-gold);
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.inquiry-form textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.inquiry-form button {
+  width: 100%;
+  padding: 1rem;
+  font-size: 1.1rem;
+}
+
+@media (max-width: 600px) {
+  .form-group-row {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  .inquiry-panel {
+    padding: 2rem 1.5rem;
+  }
+}

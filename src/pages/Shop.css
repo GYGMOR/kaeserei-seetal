@@ -1,0 +1,133 @@
+.shop-page {
+  padding: 8rem 2rem;
+  background-color: var(--bg-dark);
+}
+
+.shop-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 4rem;
+  border-bottom: 1px solid var(--glass-border);
+  padding-bottom: 2rem;
+  max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.shop-header-text h2 {
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--accent-gold);
+  margin-bottom: 0.5rem;
+}
+
+.shop-header-text h3 {
+  font-size: 2.5rem;
+  color: var(--text-main);
+  margin-bottom: 1rem;
+}
+
+.shop-header-text p {
+  color: var(--text-muted);
+}
+
+.cart-indicator {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 1.5rem;
+  font-size: 1.5rem;
+  border-radius: 30px;
+}
+
+.cart-count {
+  font-weight: bold;
+  color: var(--accent-gold);
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 2.5rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.product-card {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  transition: transform 0.3s;
+}
+
+.product-card:hover {
+  transform: translateY(-8px);
+  border-color: var(--accent-gold);
+  box-shadow: 0 10px 25px rgba(212, 175, 55, 0.2);
+}
+
+.product-image {
+  height: 250px;
+  position: relative;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.product-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s;
+}
+
+.product-card:hover .product-image img {
+  transform: scale(1.05);
+}
+
+.price-tag {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  color: var(--accent-gold);
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-weight: 600;
+  border: 1px solid var(--accent-gold);
+}
+
+.product-info {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.product-info h4 {
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+  color: var(--text-main);
+}
+
+.product-info p {
+  color: var(--text-muted);
+  margin-bottom: 1.5rem;
+  font-size: 0.95rem;
+  flex: 1;
+}
+
+.w-100 {
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .shop-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2rem;
+  }
+}

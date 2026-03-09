@@ -1,0 +1,110 @@
+.partners-section {
+  padding: 8rem 0;
+  background-color: var(--bg-dark);
+}
+
+.partners-section .section-header {
+  text-align: center;
+  margin-bottom: 3rem;
+  padding: 0 2rem;
+}
+
+.partners-section h2 {
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--accent-gold);
+  margin-bottom: 0.5rem;
+}
+
+.partners-section h3 {
+  font-size: 2.5rem;
+  color: var(--text-main);
+}
+
+.marquee-container {
+  width: 100vw;
+  overflow: hidden;
+  white-space: nowrap;
+  position: relative;
+  padding: 2rem 0;
+  margin-bottom: 4rem;
+  background: rgba(255, 255, 255, 0.02);
+  border-top: 1px solid var(--glass-border);
+  border-bottom: 1px solid var(--glass-border);
+}
+
+.marquee-container::before,
+.marquee-container::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 15vw;
+  height: 100%;
+  z-index: 2;
+}
+
+.marquee-container::before {
+  left: 0;
+  background: linear-gradient(to right, var(--bg-dark), transparent);
+}
+
+.marquee-container::after {
+  right: 0;
+  background: linear-gradient(to left, var(--bg-dark), transparent);
+}
+
+.marquee-content {
+  display: inline-flex;
+  gap: 3rem;
+  animation: scrollMarquee 25s linear infinite;
+  padding-left: 3rem;
+}
+
+.marquee-content:hover {
+  animation-play-state: paused;
+}
+
+.partner-logo {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem 3rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  border-radius: var(--border-radius-lg);
+  transition: all 0.3s;
+  min-width: 200px;
+}
+
+.partner-logo:hover {
+  color: var(--accent-gold);
+  border-color: var(--accent-gold);
+  box-shadow: 0 0 20px rgba(212, 175, 55, 0.2);
+}
+
+@keyframes scrollMarquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(calc(-50% - 1.5rem)); }
+}
+
+.map-wrapper {
+  padding: 0 2rem;
+}
+
+.large-map {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  border-radius: var(--border-radius-lg);
+  overflow: hidden;
+  padding: 0;
+  border: 1px solid var(--glass-border);
+}
+
+@media (max-width: 768px) {
+  .large-map iframe {
+    height: 350px;
+  }
+}
