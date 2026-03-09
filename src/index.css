@@ -61,67 +61,8 @@ a:hover {
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.05);
 }
 
-/* Header Styles */
-.glass-header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 80px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 5%;
-  background: rgba(255, 255, 255, 0.85);
-  backdrop-filter: blur(25px);
-  -webkit-backdrop-filter: blur(25px);
-  border-bottom: 1px solid var(--glass-border);
-  z-index: 1000;
-}
-
-.logo {
-  height: 50px;
-  width: auto;
-  object-fit: contain;
-}
-
-nav {
-  display: flex;
-  gap: 2rem;
-}
-
-nav a {
-  font-size: 0.95rem;
-  font-weight: 500;
-  color: var(--text-main);
-}
-
 /* Layout basics */
 main {
-  padding-top: 80px; /* offset header */
+  padding-top: 70px; /* offset header height */
   min-height: 100vh;
-}
-
-.hero {
-  min-height: 80vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 2rem;
-  background: radial-gradient(circle at center, rgba(212, 175, 55, 0.05) 0%, var(--bg-dark) 70%);
-}
-
-.hero h1 {
-  font-size: 4rem;
-  margin-bottom: 1rem;
-  background: linear-gradient(135deg, #fff 0%, #aaa 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.hero p {
-  font-size: 1.5rem;
-  color: var(--text-muted);
 }
