@@ -5,17 +5,18 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(10, 10, 10, 0.4);
+  padding: 0 5%;
+  background: rgba(17, 24, 39, 0.9); /* Dark glass */
   backdrop-filter: blur(25px);
   -webkit-backdrop-filter: blur(25px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   z-index: 1000;
-  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  transition: all 0.3s ease;
 }
 
 .glass-header.scrolled {
   height: 70px;
-  background: rgba(255, 255, 255, 0.85);
+  background: rgba(10, 10, 10, 0.95); /* Even darker when scrolled */
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
   border-bottom: 1px solid rgba(212, 175, 55, 0.2);
 }
@@ -37,18 +38,18 @@
 }
 
 .logo {
-  height: 140px; /* Much larger logo */
+  height: 180px; /* Massive overlapping logo */
   width: auto;
-  position: absolute; /* Overlap the header */
-  top: -40px; /* Pull it up a bit if needed, or push it down */
+  position: absolute; 
+  top: -45px; /* Overlaps top and bottom */
   transform-origin: left center;
   transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
-  filter: drop-shadow(0 4px 12px rgba(0,0,0,0.1)); /* Soft shadow for light theme */
+  filter: drop-shadow(0 8px 16px rgba(0,0,0,0.4)); /* Stronger shadow for overlap */
 }
 
-/* Shrink logo when scrolling */
+/* Shrink logo when scrolling so it doesn't block the screen */
 .scrolled .logo {
-  transform: scale(0.6);
+  transform: scale(0.45);
 }
 
 .desktop-nav {
@@ -56,14 +57,20 @@
   gap: 2rem;
 }
 
+.desktop-nav a.active {
+  color: var(--accent-gold);
+}
+
 .desktop-nav a {
   font-size: 0.95rem;
   font-weight: 500;
-  color: var(--text-main);
+  color: #ffffff; /* White text for dark header */
   text-transform: uppercase;
   letter-spacing: 1px;
   position: relative;
   padding: 0.5rem 0;
+  text-decoration: none;
+  transition: color 0.3s ease;
 }
 
 .desktop-nav a::after {

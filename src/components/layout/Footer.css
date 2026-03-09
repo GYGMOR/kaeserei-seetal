@@ -1,9 +1,9 @@
 .glass-footer {
   margin-top: 4rem;
-  background: linear-gradient(180deg, rgba(20,20,20,0) 0%, rgba(10,10,10,1) 30%);
-  border-top: 1px solid var(--glass-border);
+  background: #0a0a0a; /* Deep black/dark background */
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
   padding: 4rem 2rem 2rem;
-  color: var(--text-muted);
+  color: #a1a1aa; /* Light gray text */
 }
 
 .footer-content {
