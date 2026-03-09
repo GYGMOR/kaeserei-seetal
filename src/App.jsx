@@ -27,7 +27,7 @@ function App() {
       <ScrollToTop />
       <div className="app-container">
         <Header />
-        <main style={{ minHeight: 'calc(100vh - 80px)' }}>
+        <main style={{ minHeight: 'calc(100vh - 80px)', paddingTop: '80px' }}>
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<AboutPage />} />

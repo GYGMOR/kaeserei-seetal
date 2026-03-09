@@ -1,98 +1,142 @@
-.glass-header {
+/* ── SITE HEADER ─────────────────────────────────────── */
+.site-header {
   position: fixed;
-  top: 0; left: 0; right: 0;
-  height: 70px; /* Header remains small/sleek */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0 5%;
-  background: #000000; /* Pure black */
-  backdrop-filter: blur(25px);
-  -webkit-backdrop-filter: blur(25px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  top: 0;
+  left: 0;
+  right: 0;
   z-index: 1000;
-  transition: all 0.3s ease;
-}
-
-.glass-header.scrolled {
-  height: 70px; /* Do not shrink header height */
-  background: rgba(0, 0, 0, 0.98); /* Very dark glass when scrolled */
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  background: #0a0a0a; /* Always black, no tricks */
   border-bottom: 1px solid rgba(212, 175, 55, 0.2);
 }
 
-.header-content {
-  width: 100%;
+.header-inner {
   max-width: 1400px;
-  padding: 0 2rem;
+  margin: 0 auto;
+  padding: 0 2.5rem;
+  height: 80px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  position: relative;
 }
 
+/* ── LOGO ───────────────────────────────────────────── */
 .logo-link {
-  position: relative;
   display: flex;
   align-items: center;
-  width: 140px; /* Reserve space for the nav so it doesn't overlap */
-  height: 70px;
-  z-index: 100;
+  z-index: 10;
+  flex-shrink: 0;
 }
 
-.logo {
-  position: absolute; 
-  top: 50%;
-  left: 0;
-  transform: translateY(-50%); /* perfectly centered vertically but breaks out! */
-  height: 180px; /* Massive overlapping logo */
+.header-logo {
+  height: 160px; /* Big overlapping logo */
   width: auto;
-  transform-origin: left center;
-  transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
-  filter: drop-shadow(0 8px 16px rgba(0,0,0,0.6)); /* Strong shadow */
+  position: relative;
+  top: 0; /* sits centered in the 80px bar but overflows */
+  filter: drop-shadow(0 4px 20px rgba(0, 0, 0, 0.8));
+  transition: opacity 0.3s ease;
 }
 
-/* User specifically requested: "Und das Logo soll nicht schrumpfen!" */
+.header-logo:hover {
+  opacity: 0.85;
+}
 
-
+/* ── DESKTOP NAV ─────────────────────────────────────── */
 .desktop-nav {
   display: flex;
+  align-items: center;
   gap: 2rem;
 }
 
-.desktop-nav a.active {
-  color: var(--accent-gold);
-}
-
-.desktop-nav a {
-  font-size: 0.95rem;
-  font-weight: 500;
-  color: #ffffff; /* White text for dark header */
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  position: relative;
-  padding: 0.5rem 0;
+.nav-link {
+  color: rgba(255, 255, 255, 0.75);
   text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  position: relative;
   transition: color 0.3s ease;
+  padding-bottom: 2px;
 }
 
-.desktop-nav a::after {
+.nav-link::after {
   content: '';
   position: absolute;
-  bottom: 0;
+  bottom: -2px;
   left: 0;
   width: 0;
-  height: 2px;
-  background: var(--accent-gold);
+  height: 1px;
+  background: #d4af37;
   transition: width 0.3s ease;
-  border-radius: 2px;
 }
 
-.desktop-nav a:hover::after {
+.nav-link:hover,
+.nav-link.active {
+  color: #ffffff;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
   width: 100%;
 }
 
-@media (max-width: 768px) {
-  .desktop-nav {
-    display: none;
-  }
+.nav-cta {
+  background: #d4af37;
+  color: #0a0a0a !important;
+  padding: 0.55rem 1.4rem;
+  border-radius: 100px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.nav-cta:hover {
+  background: #c9a227;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(212, 175, 55, 0.35);
+}
+
+/* ── MOBILE TOGGLE ──────────────────────────────────── */
+.mobile-toggle {
+  display: none;
+  background: none;
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 8px;
+  padding: 6px 10px;
+  cursor: pointer;
+}
+
+/* ── MOBILE NAV ─────────────────────────────────────── */
+.mobile-nav {
+  display: none;
+  flex-direction: column;
+  background: #0a0a0a;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  padding: 1rem 2.5rem 1.5rem;
+}
+
+.mobile-nav-link {
+  color: rgba(255,255,255,0.75);
+  text-decoration: none;
+  padding: 0.75rem 0;
+  font-size: 0.95rem;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  transition: color 0.3s;
+}
+
+.mobile-nav-link:hover,
+.mobile-nav-link.active {
+  color: #d4af37;
+}
+
+@media (max-width: 900px) {
+  .desktop-nav { display: none; }
+  .mobile-toggle { display: flex; }
+  .mobile-nav { display: flex; }
+  .header-logo { height: 100px; }
 }
