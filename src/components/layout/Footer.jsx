@@ -1,7 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Instagram, Facebook, Mail, Phone, MapPin, Clock } from 'lucide-react';
+import { Instagram, Facebook, Mail, Phone, MapPin } from 'lucide-react';
 import './Footer.css';
+
+const logoSrc = import.meta.env.BASE_URL + 'logo.png';
 
 const Footer = () => {
   return (
@@ -12,7 +14,7 @@ const Footer = () => {
       <div className="footer-main">
         <div className="footer-brand">
           <Link to="/">
-            <img src="logo.png" alt="Käserei Seetal" className="footer-logo" />
+            <img src={logoSrc} alt="Käserei Seetal" className="footer-logo" />
           </Link>
           <p className="footer-tagline">
             Handwerkliche Käsekunst seit 1985 –<br />

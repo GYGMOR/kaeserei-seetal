@@ -31,7 +31,7 @@ const Header = () => {
       <div className="header-inner">
         {/* Logo */}
         <Link to="/" className="logo-link">
-          <img src="logo.png" alt="Käserei Seetal" className="header-logo" />
+          <img src={`${import.meta.env.BASE_URL}logo.png`} alt="Käserei Seetal" className="header-logo" />
         </Link>
 
         {/* Desktop Nav */}

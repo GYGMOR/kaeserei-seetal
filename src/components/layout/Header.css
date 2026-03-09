@@ -5,7 +5,17 @@
   left: 0;
   right: 0;
   z-index: 1000;
-  background: #0a0a0a; /* Always black, no tricks */
+  background: #0a0a0a;
+  border-bottom: 1px solid rgba(212, 175, 55, 0.15);
+  transition: background 0.4s ease, backdrop-filter 0.4s ease, box-shadow 0.4s ease;
+}
+
+/* When scrolled: beautiful transparent black glass */
+.site-header.scrolled {
+  background: rgba(10, 10, 10, 0.75);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.4);
   border-bottom: 1px solid rgba(212, 175, 55, 0.2);
 }
 
@@ -29,16 +39,21 @@
 }
 
 .header-logo {
-  height: 160px; /* Big overlapping logo */
+  height: 160px;
   width: auto;
   position: relative;
-  top: 0; /* sits centered in the 80px bar but overflows */
+  top: 0;
   filter: drop-shadow(0 4px 20px rgba(0, 0, 0, 0.8));
-  transition: opacity 0.3s ease;
+  transition: opacity 0.3s ease, height 0.3s ease;
 }
 
 .header-logo:hover {
   opacity: 0.85;
+}
+
+/* Slightly smaller logo when scrolled */
+.site-header.scrolled .header-logo {
+  height: 130px;
 }
 
 /* ── DESKTOP NAV ─────────────────────────────────────── */
@@ -104,18 +119,25 @@
 /* ── MOBILE TOGGLE ──────────────────────────────────── */
 .mobile-toggle {
   display: none;
-  background: none;
-  border: 1px solid rgba(255,255,255,0.2);
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
   border-radius: 8px;
   padding: 6px 10px;
   cursor: pointer;
+  transition: background 0.3s;
+}
+
+.mobile-toggle:hover {
+  background: rgba(255, 255, 255, 0.14);
 }
 
 /* ── MOBILE NAV ─────────────────────────────────────── */
 .mobile-nav {
   display: none;
   flex-direction: column;
-  background: #0a0a0a;
+  background: rgba(10, 10, 10, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
   border-top: 1px solid rgba(255,255,255,0.08);
   padding: 1rem 2.5rem 1.5rem;
 }
@@ -139,4 +161,5 @@
   .mobile-toggle { display: flex; }
   .mobile-nav { display: flex; }
   .header-logo { height: 100px; }
+  .site-header.scrolled .header-logo { height: 80px; }
 }
