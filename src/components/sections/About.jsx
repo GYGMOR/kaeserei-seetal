@@ -1,4 +1,5 @@
 import React from 'react';
+import ScrollReveal from '../utils/ScrollReveal';
 import './About.css';
 
 const About = () => {
@@ -6,33 +7,28 @@ const About = () => {
     <section id="about" className="about-section">
       <div className="container about-container">
         
-        <div className="about-text glass-panel">
-          <h2>Wer wir sind</h2>
-          <h3>Käserei Seetal</h3>
-          <p>
-            Die Käserei Seetal ist ein Ort, an dem Tradition auf moderne Perfektion trifft. 
-            Mit Leidenschaft und höchster Handwerkskunst kreieren wir Käsespezialitäten, 
-            die nicht nur den Gaumen verwöhnen, sondern auch eine Geschichte erzählen. 
-            Unser neues Lokal vereint rustikales Handwerk mit einer exklusiven, modernen Atmosphäre.
-          </p>
-          <div className="philosophy-box">
-            <h4>Unsere Philosophie</h4>
-            <p>
-              Qualität ohne Kompromisse. Wir verwenden ausschliesslich beste regionale Milch 
-              und geben unserem Käse die Zeit, die er braucht, um sein volles Aroma in 
-              unseren historischen Reifekellern zu entwickeln.
-            </p>
+        <ScrollReveal className="about-text-wrapper">
+          <div className="section-header">
+            <h2>Tradition seit 1985</h2>
+            <h3>Über uns</h3>
           </div>
-        </div>
+          <div className="about-text glass-panel">
+            <p>Im Herzen des Seetals verbinden wir seit über 30 Jahren traditionelles Handwerk mit modernem Genuss. Unsere Käserei ist mehr als nur ein Produktionsort – sie ist ein Treffpunkt für alle, die echte Qualität und authentischen Geschmack schätzen.</p>
+            <p>Jeder unserer Käselaibe erzählt die Geschichte unserer Region, geprägt von saftigen Wiesen, glücklichen Kühen und der Leidenschaft unserer Käsemeister.</p>
+            <p className="highlight">"Guter Käse braucht Zeit, Liebe und die beste Milch. Genau das geben wir ihm."</p>
+          </div>
+        </ScrollReveal>
 
-        <div className="about-images">
-          <div className="img-wrapper img-1">
-            <img src="about_1.png" alt="Handwerk in der Käserei" />
+        <ScrollReveal delay={200} className="about-images-wrapper">
+          <div className="about-images">
+            <div className="img-wrapper img-1">
+              <img src="about_1.png" alt="Handwerk in der Käserei" />
+            </div>
+            <div className="img-wrapper img-2">
+              <img src="about_2.png" alt="Käsespezialitäten" />
+            </div>
           </div>
-          <div className="img-wrapper img-2">
-            <img src="about_2.png" alt="Käsespezialitäten" />
-          </div>
-        </div>
+        </ScrollReveal>
 
       </div>
     </section>

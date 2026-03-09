@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import ScrollReveal from '../utils/ScrollReveal';
 import './Team.css';
 
 const teamMembers = [
@@ -38,26 +39,28 @@ const Team = () => {
   return (
     <section id="team" className="team-section">
       <div className="container">
-        <div className="section-header">
+        <ScrollReveal className="section-header">
           <h2>Wer dahinter steht</h2>
           <h3>Unser Team</h3>
-        </div>
+        </ScrollReveal>
 
         <div className="team-grid">
-          {teamMembers.map(member => (
-            <div key={member.id} className="team-card glass-panel" onClick={() => openModal(member)}>
-              <div className="card-image-wrapper">
-                <div className="image-placeholder">
-                  <span>{member.name.charAt(0)}</span>
+          {teamMembers.map((member, index) => (
+            <ScrollReveal key={member.id} delay={index * 100}>
+              <div className="team-card glass-panel" onClick={() => openModal(member)}>
+                <div className="card-image-wrapper">
+                  <div className="image-placeholder">
+                    <span>{member.name.charAt(0)}</span>
+                  </div>
+                </div>
+                <div className="team-info">
+                  <h4>{member.name}</h4>
+                  <p className="role">{member.role}</p>
+                  <p className="desc">{member.shortDesc}</p>
+                  <button className="btn-text">Mehr erfahren &rarr;</button>
                 </div>
               </div>
-              <div className="team-info">
-                <h4>{member.name}</h4>
-                <p className="role">{member.role}</p>
-                <p className="desc">{member.shortDesc}</p>
-                <button className="btn-text">Mehr erfahren &rarr;</button>
-              </div>
-            </div>
+            </ScrollReveal>
           ))}
         </div>
       </div>

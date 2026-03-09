@@ -1,12 +1,12 @@
 .glass-header {
   position: fixed;
   top: 0; left: 0; right: 0;
-  height: 90px;
+  height: 130px; /* Entire Header is much bigger */
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 0 5%;
-  background: rgba(17, 24, 39, 0.9); /* Dark glass */
+  background: #000000; /* Pure black */
   backdrop-filter: blur(25px);
   -webkit-backdrop-filter: blur(25px);
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
@@ -15,8 +15,8 @@
 }
 
 .glass-header.scrolled {
-  height: 70px;
-  background: rgba(10, 10, 10, 0.95); /* Even darker when scrolled */
+  height: 130px; /* Do not shrink header height */
+  background: rgba(0, 0, 0, 0.98); /* Very dark glass when scrolled */
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
   border-bottom: 1px solid rgba(212, 175, 55, 0.2);
 }
@@ -38,19 +38,17 @@
 }
 
 .logo {
-  height: 180px; /* Massive overlapping logo */
+  height: 200px; /* Massive overlapping logo */
   width: auto;
   position: absolute; 
-  top: -45px; /* Overlaps top and bottom */
+  top: -35px; /* Overlops top and bottom of the 130px header */
   transform-origin: left center;
   transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
-  filter: drop-shadow(0 8px 16px rgba(0,0,0,0.4)); /* Stronger shadow for overlap */
+  filter: drop-shadow(0 8px 16px rgba(0,0,0,0.6)); /* Strong shadow */
 }
 
-/* Shrink logo when scrolling so it doesn't block the screen */
-.scrolled .logo {
-  transform: scale(0.45);
-}
+/* User specifically requested: "Und das Logo soll nicht schrumpfen!" */
+
 
 .desktop-nav {
   display: flex;

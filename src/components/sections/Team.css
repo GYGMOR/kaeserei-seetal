@@ -38,7 +38,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, rgba(212, 175, 55, 0.2) 0%, rgba(0,0,0,1) 100%);
+  background: linear-gradient(135deg, rgba(212, 175, 55, 0.2) 0%, transparent 100%);
   color: var(--accent-gold);
   font-size: 4rem;
   font-weight: 300;
