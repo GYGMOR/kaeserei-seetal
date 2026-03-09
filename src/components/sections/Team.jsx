@@ -75,12 +75,6 @@ const Team = () => {
   return (
     <section id="team" className="team-section">
       <div className="container">
-        <ScrollReveal>
-          <div className="section-label">Unser Team</div>
-          <h2 className="section-title">Die Menschen hinter dem Käse</h2>
-          <p className="section-desc">Sechs Leidenschaften, eine Vision – handwerkliche Exzellenz aus dem Herzen des Seetals.</p>
-        </ScrollReveal>
-
         <div className="team-grid">
           {teamMembers.map((member, index) => (
             <ScrollReveal key={member.id} delay={index * 80}>
